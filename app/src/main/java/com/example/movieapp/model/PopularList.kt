@@ -1,4 +1,4 @@
-package com.example.movieapp.Model
+package com.example.movieapp.model
 
 data class PopularList(
     var page: Int? = null,

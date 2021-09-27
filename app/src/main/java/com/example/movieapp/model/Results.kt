@@ -1,4 +1,4 @@
-package com.example.movieapp.Model
+package com.example.movieapp.model
 
 data class Results(
     var id: Int? = 0,
@@ -7,6 +7,5 @@ data class Results(
     var overview: String? = null,
     var poster_path: String? = null,
     var release_date: String? = null,
-    var popularity: Int? = 0,
-
-    )
+    var popularity: Double? = 0.0
+)

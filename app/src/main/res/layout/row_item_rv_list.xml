@@ -5,10 +5,11 @@
 
         <variable
             name="iv"
-            type="com.example.movieapp.Model.Results" />
+            type="com.example.movieapp.model.Results" />
     </data>
 
     <LinearLayout
+        android:id="@+id/row_lin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -16,13 +17,13 @@
         <ImageView
             android:id="@+id/iv_movie"
             android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@{iv.poster_path}" />
+            android:layout_height="200dp" />
 
         <TextView
             android:id="@+id/txt_movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="dneme"
             android:text="@{iv.original_title}"
             android:textColor="@color/black"
             android:textSize="16sp" />
