@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,24 +9,90 @@
             type="com.example.movieapp.model.Results" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/row_lin"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:cardBackgroundColor="#FF5722"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
 
         <ImageView
-            android:id="@+id/iv_movie"
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
+            android:id="@+id/ivMovie"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/txt_movie_title"
+            android:id="@+id/txtMovieTitle"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:maxLines="2"
+            android:minLines="1"
+            android:text="@{iv.original_title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtReleaseDate"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:hint="2021-09-15"
+            android:text="@{iv.release_date}"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="dneme"
-            android:text="@{iv.original_title}"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgStar"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_star_24" />
+
+            <TextView
+                android:id="@+id/txtVoteAvarage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="86"
+                android:text="@{iv.vote_average.toString()}"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
 </layout>

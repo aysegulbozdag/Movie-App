@@ -29,14 +29,14 @@ class MovieListAdapter(var context: Context) :
             parent,
             false
         )
-//        val itemHolder =
-//            LayoutInflater.from(parent.context).inflate(R.layout.row_item_rv_list, parent, false)
 
         return ItemHolder(view);
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         holder.view.txtMovieTitle.text = movieList[position].original_title
+        holder.view.txtVoteAvarage.text = movieList[position].vote_average.toString()
+        holder.view.txtReleaseDate.text = movieList[position].release_date;
         val url = "https://image.tmdb.org/t/p/w500/" + movieList[position].poster_path;
 
         Glide.with(context)

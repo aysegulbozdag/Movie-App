@@ -7,5 +7,5 @@ data class Results(
     var overview: String? = null,
     var poster_path: String? = null,
     var release_date: String? = null,
-    var popularity: Double? = 0.0
+    var vote_average: Double? = 0.0
 )
